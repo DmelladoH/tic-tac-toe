@@ -7,6 +7,7 @@ import { Board } from './components/Board'
 import { TurnPlayerDisplay } from './components/TurnPlayerDisplay'
 import confetti from 'canvas-confetti'
 import { saveGameState } from './gameLogic/storage'
+import { HeaderNav } from './components/HeaderNav'
 
 function App () {
   const [board, setBoard] = useState(() => {
@@ -50,9 +51,8 @@ function App () {
 
   return (
     <main className='App'>
-      <header>
-        <h1>Tic Tac Toe</h1>
-      </header>
+      <HeaderNav />
+      <h1>Tic Tac Toe</h1>
       <section>
         <TurnPlayerDisplay turn={turn} />
         <Board board={board} updateTurn={updateTurn} />
