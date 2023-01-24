@@ -11,7 +11,7 @@ export function HeaderNav () {
         rel='noreferrer'
       >
         <img
-          src='/src/assets/linkedin-mark.svg'
+          src='/assets/linkedin-mark.svg'
           alt='linkedin logo'
           width={imageSize}
           height={imageSize}
@@ -23,7 +23,7 @@ export function HeaderNav () {
         rel='noreferrer'
       >
         <img
-          src='/src/assets/github-mark-white.svg'
+          src='/assets/github-mark-white.svg'
           alt='github logo'
           width={imageSize}
           height={imageSize}
