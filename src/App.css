@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+
+h1{
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
 footer{
   margin-top: 2rem;
   font-size: 0.8rem;
