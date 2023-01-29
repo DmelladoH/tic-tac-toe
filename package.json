@@ -23,11 +23,15 @@
   },
   "homepage": "https://github.com/DmelladoH/tic-tac-toe#readme",
   "private": true,
-
   "devDependencies": {
     "standard": "^17.0.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "dependencies": {
+    "server": "^1.0.0",
+    "socket.io": "^4.5.4",
+    "workspace": "^0.0.1-preview.1"
   }
 }
