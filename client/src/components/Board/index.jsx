@@ -5,7 +5,14 @@ export function Board ({ board, updateTurn }) {
     <section className='board'>
       {
         board.map((piece, i) => {
-          return <Square key={i} index={i} onClick={updateTurn}>{piece}</Square>
+          return (
+            <Square
+              key={i}
+              index={i}
+              onClick={updateTurn}
+            >{piece}
+            </Square>
+          )
         })
       }
     </section>
