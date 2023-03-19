@@ -1,7 +1,7 @@
 import { GAME_MODES } from '../../constants/gameModes'
 import { SelectCodeModal } from '../SelectCodeModal'
 
-import './SelectGameModeDisplay.css'
+import './selectGameModeDisplay.css'
 import { useLogGame } from '../../hooks/useLogGame'
 import { useGameMode } from '../../hooks/useGameMode'
 export function SlectGameModeDisplay () {
