@@ -11,7 +11,9 @@
   "scripts": {
     "dev": "npm run dev ",
     "server": "npm run start --workspace=server",
-    "build": "npm run build --workspace=client"
+    "build": "npm run build --workspace=client",
+    "start": "node server/index.js --workspace=server"
+
 
   },
   "repository": {
