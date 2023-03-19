@@ -1,7 +1,7 @@
 import './square.css'
 import { player } from '../../constants'
 
-export function Square ({ children, onClick, index }) {
+export function Square ({ index, onClick, children }) {
   const textClassName = children === player.X ? 'text-x' : 'text-o'
 
   const handleClick = () => {

@@ -1,27 +1,29 @@
-import { useState } from 'react'
+import { LocalGame } from './components/LocalGame'
+import { GAME_MODES } from './constants/gameModes'
 import './App.css'
-import { WinnerModal } from './components/WinnerModal'
-import { Board } from './components/Board'
-import { TurnPlayerDisplay } from './components/TurnPlayerDisplay'
-import { useGame } from './hooks/useGame'
+
+// import { useGame } from './hooks/useGame'
 import { HeaderNav } from './components/HeaderNav'
+import { MultiGame } from './components/MultiGame'
+import { OnlineGameProvider } from './context/onlineGameContext'
+import { SlectGameModeDisplay } from './components/SelectGameModeDisplay'
+import { useGameMode } from './hooks/useGameMode'
 
 function App () {
-  const { board, turn, winner, updateTurn, resetGame } = useGame()
+  const { gameMode } = useGameMode()
 
   return (
     <main className='App'>
       <HeaderNav />
       <h1>Tic Tac Toe</h1>
+      <OnlineGameProvider>
+        <SlectGameModeDisplay />
+        {gameMode === GAME_MODES.online && (
+          <MultiGame />
+        )}
+      </OnlineGameProvider>
 
-      <section>
-        <TurnPlayerDisplay turn={turn} />
-        <Board board={board} updateTurn={updateTurn} />
-        <WinnerModal winner={winner} resetGame={resetGame} />
-      </section>
-      <footer>
-        <button onClick={resetGame}>Restart Game</button>
-      </footer>
+      {gameMode === GAME_MODES.local && <LocalGame />}
     </main>
   )
 }

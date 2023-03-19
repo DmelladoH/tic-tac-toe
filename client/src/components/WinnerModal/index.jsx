@@ -12,7 +12,7 @@ export function WinnerModal ({ winner, resetGame }) {
     <section className='winner-modal'>
       <div className='winner-modal__body'>
         <h2>{text}</h2>
-        <button onClick={resetGame}>reset game</button>
+        <button onClick={resetGame}>reset</button>
       </div>
 
     </section>
