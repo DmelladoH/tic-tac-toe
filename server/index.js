@@ -1,9 +1,10 @@
-import { PORT } from './config'
+import { PORT } from './config.js'
 import { fileURLToPath } from 'url'
 import { join, dirname } from 'path'
+import express from 'express'
+import { Server as SocketServer } from 'socket.io'
 
-const express = require('express')
-const cors = require('cors')
+import cors from 'cors'
 
 const app = express()
 
@@ -14,7 +15,7 @@ const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
 
-const io = require('socket.io')(server, {
+const io = new SocketServer(server, {
   cors: {
     origin: '*'
   }
