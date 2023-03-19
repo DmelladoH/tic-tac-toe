@@ -8,8 +8,10 @@
     "server"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=client",
-    "server": "npm run start --workspace=server"
+    "dev": "npm run dev ",
+    "server": "npm run start --workspace=server",
+    "build": "npm run build --workspace=client"
+
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,10 @@
+import { PORT } from './config'
+import { fileURLToPath } from 'url'
+import { join, dirname } from 'path'
+
 const express = require('express')
 const cors = require('cors')
 
-const PORT = 3000
 const app = express()
 
 app.use(express.json())
@@ -16,6 +19,9 @@ const io = require('socket.io')(server, {
     origin: '*'
   }
 })
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+app.use(express.static(join(__dirname, '../client/dist')))
 
 io.on('connection', (socket) => {
   socket.on('joinRoom', (code) => {
