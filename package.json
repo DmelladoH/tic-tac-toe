@@ -13,8 +13,6 @@
     "server": "npm run start --workspace=server",
     "build": "npm i && npm run build --workspace=client",
     "start": "node server/index.js --workspace=server"
-
-
   },
   "repository": {
     "type": "git",
