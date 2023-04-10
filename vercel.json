@@ -13,18 +13,5 @@
       "src": "./server",
       "use": "@vercel/node"
     }
-  ],
-  "routes": [
-    {
-      "src": "/socket.io/(.*)",
-      "dest": "http://localhost:PORT/socket.io/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "http://localhost:PORT/$1"
-    }
-  ],
-  "env": {
-    "PORT": 3000
-  }
+  ]
 }
