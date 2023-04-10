@@ -2,14 +2,29 @@
   "version": 2,
   "builds": [
     {
-      "src": "/server/index.js",
+      "src": "./client",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "npm run build",
+        "outputDirectory": "dist"
+      }
+    },
+    {
+      "src": "./server",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
+      "src": "/socket.io/(.*)",
+      "dest": "http://localhost:PORT/socket.io/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/server/index.js"
+      "dest": "http://localhost:PORT/$1"
     }
-  ]
+  ],
+  "env": {
+    "PORT": 3000
+  }
 }
